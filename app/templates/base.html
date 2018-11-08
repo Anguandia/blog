@@ -1,0 +1,59 @@
+<!--DOCTYPE html-->
+<html lang="en">
+<head>
+  <title>{{title}}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/Q&A.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
+  <!--<link rel="stylesheet" href="{{url_for('static', filename='media.css')}}">-->
+  <link rel="stylesheet" href="{{url_for('static', filename='asks.css')}}">
+  <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+</head>
+<body>
+  <div id="page-wrap">
+    <nav id="tabs">
+        <tab><a id="home" class="active" href="{{url_for('index')}}">Home</a></tab>
+        <tab><a href="{{url_for('sign_up')}}">Signup</a></tab>
+        <tab><a href="{{url_for('login')}}">Login</a></tab>
+        <tab><a href="{{url_for('logout')}}">Logout</a></tab>
+    </nav >
+    <header>
+      <script src="{{url_for('static', filename='js/header.js')}}"></script>
+    </header>
+    <div class="clear"></div>
+    <div class="container" id="section"> 
+      <article class="column">
+        <script src="static/js/features.js"></script>
+      </article>
+      <aside class="column" id="t">
+        <div class="feeds">
+          <script src="static/js/feeds.js"></script>
+        </div>
+        <div class="container" id="body">
+          <div class="column" id="main">
+          {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+{% endwith%}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/questions.js') }}"></script>
+            {% block content%}{% endblock %}
+          </div>
+          <div class="column" id="alike">
+            <script src="static/js/alike.js"></script>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <footer>
+      <p class="right"><em>Developed by Anguandia Mike</em></p>
+    </footer>
+  </div>
+</body>
+</html>

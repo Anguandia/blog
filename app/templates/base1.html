@@ -1,0 +1,24 @@
+<head>
+{% if title%}
+    <title>StackOverflow: {{title}}</title>
+    {% else%}
+    <title>StackOverflow</title>
+{% endif%}
+</head>
+<body>
+<div id='nav'>
+    <tab><a href="{{url_for('index')}}">Home</a></tab>
+    <tab><a href="{{url_for('login')}}">Login</a></tab>
+    <tab><a href="{{url_for('logout')}}">Logout</a></tab>
+</div><hr>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+{% endwith%}
+{% block content%}{% endblock %}
+</body>

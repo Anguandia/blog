@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if user%}
+<h2>Hello {{ user.username }}</h2>
+{% else%}
+<h2>Hello User</h2>
+{% endif%}
+
+<tab id='ask'><a href="{{ url_for('question')}}">Ask a Question</a></tab>
+    {% for post in posts %}
+    <div class=''>
+    <table id='sub'>
+        <tr valign="top" class="px">
+            <td>{{ post.author.username }} {{ post.timestamp }} posted:<br>{{ post.body }}<br>
+            Last active on: {{ post.author.last_seen }}
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div class='' style='display:'>
+        <ul>{% for ans in answers%}
+        {% if ans.ans_to==post.id%}
+        <li>{{ans}}</li>
+        {% endif%}
+        {% endfor%}</ul>
+        <form class="" action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            {{ form.questionID(value=post.id, style="display:none")}}
+            <p>
+                {{ form.post.label }}<br>
+                {{ form.post(style="width:80%") }}
+                {% for error in form.post.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.submit() }}</p>
+        </form>
+        </div><hr>
+    {% endfor %}
+        <script type="text/javascript" src="{{ url_for('static', filename='js/questions.js') }}"></script>
+{% endblock content %}
