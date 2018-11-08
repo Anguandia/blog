@@ -1,0 +1,217 @@
+/*Container for holding entire body content*/
+#page-wrap{
+    width: 100%;
+    height: 100%;
+    background: rgb(238, 164, 238);
+    }
+    /*General box styling for page*/
+    *{
+    overflow-wrap: normal;
+    box-sizing: border-box;
+    }
+    h1,h2,h3,h4{
+        text-align: center;
+    }
+     /*navbar style*/
+     nav{
+         margin:0 5%;
+         padding: 1% 2%;
+         font-weight: normal; 
+         background: white;
+         border-radius: 30px;
+     }
+     /*style navlinks*/
+     nav tab a{
+         text-decoration: none;
+         padding: 1.15% 0.2% 1.24%;
+         margin: 0;
+         color: blue;
+     }
+     /*Give the left most #home tab a fitting shape as containing bar*/
+     #home{
+         border-bottom-left-radius: 32px;
+         border-top-left-radius: 32px;
+         padding-left: 4%;
+         margin-left: -2.3%;
+     } 
+     /*Align additional login/signup link verically*/
+     nav p{
+         margin-top: auto;
+     }
+     nav tab a:hover{ 
+        background: rgb(238, 164, 238); 
+        color: black; 
+     }
+     nav tab a.active{ 
+        color: crimson;
+     }
+     /*Set for text wrap clear after floating elements*/
+     .left{
+         float:left;
+     }
+     .right{
+         float:right;
+     }
+     header{
+         /*background-color: rgb(216, 114, 114);*/
+         height: 10%;
+         width: 86%;
+         margin: 0 auto;
+         font-family: Georgia, 'Times New Roman', Times, serif;
+         background-image: linear-gradient(violet rgb(238, 164, 238) 50%);
+     }
+     /*Align text vertically*/
+     header p{
+         color: navy;
+         margin: 1.8% 2%;
+     }
+     /*Dimension form as container for positioning searxh box*/ 
+     #search_box{
+         width: 25%;
+         height: 40px;
+         position: relative;
+         margin-top: 1.3%;
+         margin-right: -4%; 
+     }
+     /*Position search input element absolutely within container*/
+      #srch{
+         margin: 0% 0%;    /*Fix ref to top-right corner of container*/
+         height:100%;
+         width: 100%;
+         font-size: 17px;
+         overflow: hidden;
+         position: absolute;
+         border-radius: 10px;
+         text-align: center;
+     }
+      #search{               /*search button*/
+         background-color:gray;
+         color: white;
+         width: 13.6%;
+         height: 99%;
+         position: absolute;
+         border-bottom-left-radius: 10px;
+         border-top-left-radius: 10px;
+        }
+    
+     /*Create container division as parent for inline divisions to be
+     displayed as table cells, i.e, adjacent blocks*/
+     #section{
+         width: 100%;
+         height: 75%
+      }
+      /*Remove any paddingn beteen adjascent blocks within a given container*/
+      .container, .column{
+          border-collapse: collapse;
+      }
+      article{          /*First child division of #section*/
+         padding: 0% 1%;
+         background-image: linear-gradient(to bottom right, rgb(228, 121, 231), rgb(238, 164, 238) 20%);
+         position: relative;
+         font-family: serif;
+         text-align: center;
+     } 
+     article a{
+         text-decoration: none;
+     }
+     /*Secondchild division #section. Make #t a container for other child blocks*/
+     #t{                  
+         background-image: linear-gradient(violet, rgb(238, 164, 238));
+         width:82%; 
+         position: relative;
+     }
+     /*Set div to clear wrapping arond floatind elements*/
+     .clear{
+         clear: both;
+     }
+     /*Set child div to full width of #t*/
+     .feeds{
+         height: 60px;
+         background-image: linear-gradient(to right, rgb(240, 154, 243), violet)
+     }
+     .feeds #logo, .feeds .feed{
+         margin:2% 5% 0;
+         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+         text-align: center;       /*Center align logo horizontally*/
+     }
+     .feeds #logo{
+         margin: .5% calc(5% - 30px);
+         margin-right: 00px;
+         height: 90%;
+         width: 25%;
+     }
+      /*Create container division as parent for inline divisions to be
+     displayed as table cells, i.e, adjacent blocks*/
+     #body{
+         width: 100%;
+         min-height: calc(100% - 60px);
+         position: relative;
+         vertical-align: top;
+         border-top: solid 1px rgba(172, 63, 130, 0.651);
+     }
+     /*1st child division of #body to contain main content of page*/
+     #main{
+         margin: 0;
+         background-image: radial-gradient(circle, white, rgb(238, 164, 238) 50%);
+         width: 82%;
+     }
+     /*Second child division of #body to carry highlights related to main content*/
+     #alike{
+         padding: 2%;
+         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida  sans-serif';
+         color: purple;
+         text-align: center;
+         position: relative;
+         /*border-left: solid 1px rgba(172, 63, 130, 0.651);*/
+     }
+     /*remove bulleting from list items*/
+     #trending, #similar, #related{
+         list-style: none;
+     }
+      footer{
+         background-color: rgb(204, 100, 204);
+         height:10%;
+         color: white;
+     }
+      footer p{
+         margin: 1.8% 2%; 
+      }
+     /*relocate to appropriate file
+      #send{
+         position: absolute;
+         width: 5%;
+         margin-left: -5.3%;
+     }
+     .textarea{
+         width: 80%;
+         height: 20%;
+         padding: 5%;
+         margin-left: 10%;
+         background: 
+     }
+     #attach{
+         margin-left: 10%;
+     }*/ 
+     /*fromat adjascent blocks to be displayed as table cells
+     within a main table that is their container*/
+     .container{
+         display: table;
+     }
+     .column{
+         display: table-cell;
+     }
+     /**Check functionality*/
+     #main h3, #main h4{
+         margin-top: 2%;
+     }
+     #minHeight{
+         min-height: 359.5px;
+     }
+     #ask{
+         float:right;
+         text-decoration: none;
+         background: purple;
+     }
+     #ask:hover{
+         background: violet;
+     }

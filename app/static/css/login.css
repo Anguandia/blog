@@ -1,0 +1,47 @@
+/*Login page styles*/
+/*Wrapper for positioning login form*/
+.login-wrapper{ 
+    width: 80%;
+    margin: auto;
+    position: relative;
+    background: rgb(209, 72, 209);
+}
+#form{
+    width:100%;
+    background: purple;
+}
+/*login form styles*/
+#legacy, #social{
+    margin-top: 0; 
+    padding-top: 5%;
+} 
+/*Social media loginsection*/  
+#social{
+    width: 30%;
+    color: white;
+}
+/*platform link color style*/
+#social a{
+    color: white;
+}
+/*White color for password recovery link*/
+#legacy sub a{
+    color: white;
+}
+/*From input field styling*/
+#legacy input{
+    min-width: 80%;
+    min-height: 15%;
+    padding: 2%;
+    margin: 0.5% auto;
+}
+#legacy{
+    min-width: 70%;
+    padding-left: 10%;
+    border: solid 1px purple;
+    border-right: solid 1px white;
+    padding-bottom: 2%;  
+}
+#submit{
+    background-color: blue;
+}
